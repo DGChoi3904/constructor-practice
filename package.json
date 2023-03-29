@@ -1,0 +1,23 @@
+{
+  "name": "constructor-practice",
+  "version": "1.0.0",
+  "description": "2023년 3월 29일",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DGChoi3904/constructor-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DGChoi3904/constructor-practice/issues"
+  },
+  "homepage": "https://github.com/DGChoi3904/constructor-practice#readme",
+  "dependencies": {
+    "mariadb": "^3.1.1"
+  }
+}
