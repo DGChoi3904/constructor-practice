@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "2023년 3월 29일",
   "main": "constructor.js",
+  "private":"true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

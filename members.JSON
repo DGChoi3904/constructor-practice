@@ -1,0 +1,17 @@
+[
+    {
+        "id": "김국진",
+        "password": "1234",
+        "email": "김국진@email.com"
+    },
+    {
+        "id": "김용만",
+        "password": "2345",
+        "email": "김용만@email.com"
+    },
+    {
+        "id": "김대건",
+        "password": "3456",
+        "email": "kimdaegun@email.com"
+    }
+]
