@@ -3,7 +3,9 @@ const http = require('http');
 const fs = require('fs');
 //DB서버 접속
 const pool = mariadb.createPool({host :"192.168.0.140", user: "dgchoi3904", password:'1234', database:'DGChoi3904', connectionLimit: 5});
-//
+// 쿼리스트링 import하기
+const querystring = require('querystring');
+
 async function SQLConnection() {
   let conn;
   
@@ -33,8 +35,16 @@ const server = http.createServer((request,response)=>{
       response.end();   
   }
   if(request.method === 'POST'){
+      //post로 들어간 데이터는 request의 body에 들어간다. 버퍼화되어있기에 이를 toString을 통해 문자열로 변환하면 읽힌다.
+      //post의 body에 들어간 데이터 불러오는 구문.
       request.on('data', (chunk)=>{
-        console.log(chunk.toString('utf-8'));
+        // 받은 id와 pw 기록(버퍼화되어있음)을 문자열로 변환하는 작업.
+        // user_id=<입력한 아이디>&user_password=<입력한 암호>
+        let data = querystring.parse(chunk.toString());
+        console.log(data['user_id'])
+        console.log(data['user_password'])
+        console.dir(data);
+        console.log(data.hasOwnProperty('user_id'));
       })
       response.writeHead(200,{"Content-type":"text/html"});
       response.write(fs.readFileSync("./index.html","utf8"));
