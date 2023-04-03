@@ -8,11 +8,15 @@
 </head>
 <body>
   <div id="root">
-    <form method="POST">
+    <!-- 로그인 폼 -->
+    <form action="/login" method="POST">
+      <!--user_id 입력란-->
       <label for="user_id">ID:</label>
       <input type="text" placeholder="Enter id" name="user_id" required/>
+      <!--user_password 입력란-->
       <label for="user_password">PW:</label>
       <input type="text" placeholder="Enter password" name="user_password" required/>
+      <!--submit버튼, 누르면 form의 방식대로 서버에 request함-->
       <button type="submit">Login</button>      
     </form>
   </div>

@@ -27,7 +27,24 @@ async function SQLConnection() {
 
 const server = http.createServer((request,response)=>{
   if(request.method === 'GET' && request.url === '/'){
-    
+      console.log(request.url);
+      response.writeHead(200,{"Content-type":"text/html"});
+      response.write(fs.readFileSync("./index.html","utf8"));
+      response.end();   
+  }
+  if(request.method === 'POST'){
+      request.on('data', (chunk)=>{
+        console.log(chunk.toString('utf-8'));
+      })
+      response.writeHead(200,{"Content-type":"text/html"});
+      response.write(fs.readFileSync("./index.html","utf8"));
   }
 })
-SQLConnection();
+//SQLConnection();
+server.listen(8036, err=>{
+  if(err){
+    console.error(`${err}가 발생했습니다.`)
+  } else{
+    console.log('포트 8036으로 연결되었습니다.')
+  }
+});
